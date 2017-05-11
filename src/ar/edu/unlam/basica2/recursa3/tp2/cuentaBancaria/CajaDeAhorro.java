@@ -22,7 +22,7 @@ public class CajaDeAhorro extends CuentaBancaria {
 			this.saldo = this.saldo - monto;
 			this.contadorDeExtracciones ++;
 		}else{
-			this.saldoErroneo = "Error: Saldo insuficiente";
+			this.setSaldoErroneo("Error: Saldo insuficiente");
 		}
 	}
 
@@ -31,6 +31,14 @@ public class CajaDeAhorro extends CuentaBancaria {
 			this.saldo = this.saldo - RECARGO;
 			this.contadorDeExtracciones = 0;
 		}
+	}
+
+	public String getSaldoErroneo() {
+		return saldoErroneo;
+	}
+
+	public void setSaldoErroneo(String saldoErroneo) {
+		this.saldoErroneo = saldoErroneo;
 	}
 
 	

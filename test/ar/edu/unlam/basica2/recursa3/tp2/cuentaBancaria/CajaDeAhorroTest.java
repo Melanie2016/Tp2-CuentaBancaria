@@ -62,4 +62,17 @@ public class CajaDeAhorroTest {
 		
 	}
 
+	
+	@Test 
+	public void queNoSePuedaExtraerDinero(){
+		
+	CajaDeAhorro miCA = new CajaDeAhorro(300.00);
+	
+	miCA.extraerDinero(500.00);
+	
+	String esperado = "Error: Saldo insuficiente";
+	String obtenido = miCA.getSaldoErroneo();
+	
+	Assert.assertEquals(esperado, obtenido);
+}
 }
