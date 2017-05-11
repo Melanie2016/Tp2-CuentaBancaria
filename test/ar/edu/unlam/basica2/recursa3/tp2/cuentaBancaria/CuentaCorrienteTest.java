@@ -46,6 +46,25 @@ public class CuentaCorrienteTest {
 
 	}
 	
-
+	@Test
+	public void queSePuedaExtraerDineroEnDescubierto (){
+		CuentaCorriente miCC = new CuentaCorriente(100.00, 300.00);
+		miCC.extraerDinero(200.00);
+		Double esperado = 200.00;
+		Double obtenido = miCC.getSaldoLimite();
+		Assert.assertEquals(esperado, obtenido);
+		
+	}
+	
+	@Test
+	public void queNoSePuedaExtraerDinero (){
+		
+		CuentaCorriente miCC = new CuentaCorriente(100.00, 300.00);
+		miCC.extraerDinero(500.00);
+		String esperado = "Saldo insuficiente";
+		String obtenido = miCC.getResultadoErroneo();
+		Assert.assertEquals(esperado, obtenido);
+		
+	}
 
 }
